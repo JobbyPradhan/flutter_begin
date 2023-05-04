@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_begin/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text("Home"),
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+            iconTheme: const IconThemeData(color:Colors.black),
+          title: const Text("Home",
+          style: TextStyle(color: Colors.black),),
         ),
-        drawer: const Drawer(),
+        drawer: MyDrawer(),
       );
   }
 
