@@ -3,29 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_begin/model/Cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class CartList extends StatefulWidget {
-  const CartList({Key? key}) : super(key: key);
+import '../../core/Store.dart';
 
-  @override
-  State<CartList> createState() => _CartListState();
-}
-
-class _CartListState extends State<CartList> {
-  final _cart = CartModel();
+class CartList extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return _cart.items.isEmpty
+    VxState.watch(context, on: [RemoveMutation]);
+    final CartModel cart = (VxState.store as MyStore).cart;
+    return cart.items.isEmpty
         ? "Nothing to show".text.xl3.makeCentered()
         : ListView.builder(
-            itemCount: _cart.items.length,
+            itemCount: cart.items.length,
             itemBuilder: (context, index) => ListTile(
                   leading: const Icon(Icons.done),
-                  title: _cart.items[index].name.text.semiBold.make(),
+                  title: cart.items[index].name.text.semiBold.make(),
                   trailing: IconButton(
                       onPressed: () {
-                        _cart.remove(_cart.items[index]);
-                        setState(() {});
+
+                        RemoveMutation(cart.items[index]);
                       },
                       icon: const Icon(Icons.remove_circle_outline)),
                 ));
