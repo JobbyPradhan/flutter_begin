@@ -10,7 +10,7 @@ class MyTheme {
       canvasColor: creamColor,
       buttonColor: darkBluishColor,
       accentColor: Colors.black,
-      colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black),
+      //colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black,brightness: Brightness.dark),
       primaryTextTheme: GoogleFonts.latoTextTheme(),
       appBarTheme: AppBarTheme(
         color: Colors.white,
@@ -27,8 +27,8 @@ class MyTheme {
       buttonColor: lightBluishColor,
       canvasColor: darkCreamColor,
       accentColor: Colors.white,
-      colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black,
-      brightness: Brightness.dark),
+      //colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black,
+      //brightness: Brightness.dark),
       primaryTextTheme: GoogleFonts.latoTextTheme(),
       appBarTheme: AppBarTheme(
         color: Colors.white,

@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.theme.colorScheme.secondary,
+      backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.pushNamed(context, MyRoutes.cartRoute);
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 const CatalogHeader(),
-                if (products.isNotEmpty)
+                if (CatalogModel.items.isNotEmpty)
                   const CatalogList().py16().expand()
                 else
                   const CircularProgressIndicator().centered().expand()
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     await rootBundle.loadString("asserts/files/catalog.json");
     var decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
-    products = List.from(productsData)
+    CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
     setState(() {});
