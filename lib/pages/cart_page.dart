@@ -17,7 +17,7 @@ class CartPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           title: "Cart"
               .text
-              .color(context.theme.accentColor)
+              .color(context.theme.colorScheme.onSurface)
               .textStyle(context.headlineSmall)
               .semiBold
               .make(),
@@ -45,12 +45,12 @@ class _CartTotal extends StatelessWidget {
         children: [
           VxConsumer(
             mutations: const {RemoveMutation},
-            notifications: {},
+            notifications: null,
             builder: (context, _, VxStatus? status) {
               return "\$${cart.totalPrice}"
                   .text
                   .xl5
-                  .color(context.theme.accentColor)
+                  .color(context.theme.colorScheme.onSurface)
                   .make();
             },
           ),
@@ -62,7 +62,7 @@ class _CartTotal extends StatelessWidget {
                   },
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(context.theme.buttonColor)),
+                          MaterialStateProperty.all(context.theme.colorScheme.onPrimary)),
                   child: "Buy".text.white.make())
               .w32(context)
         ],

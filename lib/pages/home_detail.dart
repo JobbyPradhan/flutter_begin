@@ -19,7 +19,7 @@ class HomeDetailPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: "Catalog Detail"
             .text
-            .color(context.theme.accentColor)
+            .color(context.theme.colorScheme.onSurface)
             .semiBold
             .textStyle(context.headlineSmall)
             .make(),

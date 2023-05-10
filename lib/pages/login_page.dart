@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                 "Welcome $name",
                 style: TextStyle(
                     fontSize: 28,
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontWeight: FontWeight.bold),
               ),
               const SizedBox(
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20.0,
                     ),
                     Material(
-                      color: context.theme.buttonColor,
+                      color: context.theme.colorScheme.onPrimary,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8.0),
                       child: InkWell(

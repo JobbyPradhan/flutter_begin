@@ -8,15 +8,17 @@ class MyTheme {
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.white,
       canvasColor: creamColor,
-      buttonColor: darkBluishColor,
-      accentColor: Colors.black,
-      //colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black,brightness: Brightness.dark),
+    /*  buttonColor: darkBluishColor,
+      accentColor: Colors.black,*/
+      colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black,
+          onPrimary: darkBluishColor,
+          onSurface: Colors.black),
       primaryTextTheme: GoogleFonts.latoTextTheme(),
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0.0,
         iconTheme: const IconThemeData(color: Colors.black),
-        textTheme: Theme.of(context).textTheme,
+        toolbarTextStyle: Theme.of(context).textTheme.bodyMedium,
       ));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
@@ -24,17 +26,17 @@ class MyTheme {
    //   brightness: Brightness.dark,
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.black,
-      buttonColor: lightBluishColor,
+    //  buttonColor: lightBluishColor, // onPrimary
       canvasColor: darkCreamColor,
-      accentColor: Colors.white,
-      //colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black,
+      colorScheme: ThemeData().colorScheme.copyWith(secondary: Colors.black,
+      onPrimary: lightBluishColor,onSurface: Colors.white),
       //brightness: Brightness.dark),
       primaryTextTheme: GoogleFonts.latoTextTheme(),
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0.0,
         iconTheme: const IconThemeData(color: Colors.white),
-        textTheme: Theme.of(context).textTheme,
+        toolbarTextStyle: Theme.of(context).textTheme.bodyMedium,
       ));
 
   //Colors
